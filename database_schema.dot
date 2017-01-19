@@ -1,0 +1,34 @@
+digraph {
+graph [
+  rankdir = "LR"
+];
+"purchaser" [
+  label = "Purchaser|id|name"
+  shape = "record"
+];
+"merchant" [
+  label = "Merchant|id|name|address"
+  shape = "record"
+];
+"purchase" [
+  label = "Purchase|id|purchaser_id|merchant_id|item_id|quantity|origin_id"
+  shape = "record"
+];
+"origin" [
+  label = "Origin|id|revenue_id|file_name"
+  shape = "record"
+];
+"item" [
+  label = "Item|id|description|price"
+  shape = "record"
+];
+"revenue" [
+  label = "Revenue|id|gross"
+  shape = "record"
+];
+"purchase"->"merchant";
+"purchase"->"purchaser";
+"purchase"->"item";
+"purchase"->"origin";
+"origin"->"revenue";
+}

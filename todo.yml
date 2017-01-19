@@ -1,0 +1,47 @@
+## Simple task and bug tracking
+tasks:
+  - task:   Create and configure baseline Rails app
+    id:     t1
+    status: Complete
+  - task:   Design database schema 
+    id:     t2
+    status: Complete
+  - task:   Create the Ingestor service 
+    id:     t3 
+    status: Complete
+    subtasks:
+      - task:   Ingestor - receive job from queue
+        id:     t3-1
+        status: Complete
+      - task:   Ingestor - parse the provided file
+        id:     t3-2
+        status: Complete
+      - task:   Ingestor - normalize the data
+        id:     t3-3
+        status: Complete
+      - task:   Ingestor - send data to database   
+        id:     t3-4
+        status: Complete
+  - task:    Create the Revenue service
+    id:      t4
+    status:  Complete
+    subtasks:
+      - task:   Revenue - Calculate total amount gross revenue
+        id:     t4-1
+        status: Complete
+      - task:   Revenue - Save gross revenue in database
+        id:     t4-2
+        status: Complete
+  - task:    Create the HTML view
+    id:      t5
+    status:  Complete
+    subtasks:
+      - task:   View - Create the Origins controller to facilitate file uploads 
+        id:     t5-1
+        status: Complete
+      - task:   View - After POST of file, send file to Task queue and call Ingestor Service
+        id:     t5-2
+        status: Complete
+      - task:   View - Display gross revenue after calculated by Revnue Service
+        id:     t5-3
+        status: Complete

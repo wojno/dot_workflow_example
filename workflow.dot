@@ -1,0 +1,11 @@
+digraph G {
+  subgraph cluster_0 {
+    label = "Workflow Service";
+    "Ingestor Service"; "Revenue Service";
+  }
+  "User Input" -> "Upload File";
+  "Upload File" -> "Task Queue";
+  "Task Queue" -> "Workflow Service";
+  "Ingestor Service" -> "Update UI";
+  "Revenue Service" -> "Update UI";
+}
